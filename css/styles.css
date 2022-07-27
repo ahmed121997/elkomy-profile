@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /*!
 * Start Bootstrap - Resume v6.0.1 (https://startbootstrap.com/template-overviews/resume)
 * Copyright 2013-2020 Start Bootstrap
@@ -10025,8 +10025,14 @@ h1 {
 }
 
 p.lead {
-  font-size: 1.15rem;
-  font-weight: 400;
+  font-size: 1.3rem;
+    font-weight: 900;
+    font-family: cursive;
+    letter-spacing: 0px;
+}
+
+p.lead span {
+  color :#f55247;
 }
 
 .subheading {
@@ -10035,7 +10041,44 @@ p.lead {
   font-weight: 500;
   font-size: 1.5rem;
 }
+.icons-lang .fab{
+  font-size:3.5em
+}
 
+.icons-lang li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 1.2em;
+  margin-top:2em;
+}
+
+.icons-lang .fa-html5{
+ color :#e34f26;
+}
+
+.icons-lang .fa-css3-alt{
+  color :#002561;
+ }
+
+ .icons-lang .fa-bootstrap{
+  color :#563d7c
+  ;
+ }
+
+ .icons-lang .fa-js{
+  color :  #F0DB4F;
+ }
+
+ .icons-lang .fa-php{
+  color : #8892be;
+ }
+ .icons-lang .fa-laravel{
+  color :#f55247;
+ }
+ .icons-lang .fa-git-square{
+  color :#F1502F;
+ }
+ 
 #sideNav .navbar-nav .nav-item .nav-link {
   font-weight: 800;
   letter-spacing: 0.05rem;
@@ -10084,23 +10127,30 @@ p.lead {
     display: block;
   }
 }
+.social-icons{
+	margin-top : 40px;
+}
 .social-icons .social-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 3.5rem;
-  width: 3.5rem;
-  background-color: #495057;
+  height: 2.5rem;
+  width: 2.5rem;
+  background-color: #3f6081;
   color: #fff;
   border-radius: 100%;
-  font-size: 1.5rem;
-  margin-right: 1.5rem;
+  font-size: 1.2em;
+  transition : all 0.5s ease;
+  text-decoration: none;
+  
 }
 .social-icons .social-icon:last-child {
   margin-right: 0;
 }
 .social-icons .social-icon:hover {
   background-color: #009688;
+  border: 0.5px solid #FFF;
+ 
 }
 
 .dev-icons {
