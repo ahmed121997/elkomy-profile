@@ -120,6 +120,9 @@ ul ol {
   margin-bottom: 0;
 }
 
+ul li{
+  list-style: none;;
+}
 dt {
   font-weight: 700;
 }
