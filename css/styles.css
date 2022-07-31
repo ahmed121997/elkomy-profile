@@ -163,6 +163,9 @@ a {
   text-decoration: none;
   background-color: transparent;
 }
+.text-s{
+  color : #009688;
+}
 a:hover {
   color: #824027;
   text-decoration: underline;
@@ -10087,6 +10090,12 @@ p.lead span {
 #sideNav .navbar-toggler:focus {
   outline-color: #d48a6e;
 }
+
+.saknni-p { 
+    color: #343a40;
+    font-weight: 600;
+}
+
 
 @media (min-width: 992px) {
   #sideNav {
