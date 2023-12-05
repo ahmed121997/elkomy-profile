@@ -24,7 +24,11 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet" />
+    <!-- CSS Assets -->
+    <!-- <link rel="stylesheet" href="css/app.css" /> -->
 
+    <!-- Javascript Assets -->
+    <!-- <script src="js/app.js" defer></script> -->
     <style>
         section {
             display: inline-block;
@@ -104,33 +108,33 @@
                 </div>
                 <!-- display only in small screen -->
                 <div class="mb-5 mt-2  d-lg-none">
-                    <ul  class="">
+                    <ul class="">
                         <li>
                             <div class="social-icons">
                                 <abbr title="Linked in" class="social-icon">
                                     <a class="social-icon" href="https://www.linkedin.com/in/ahmed-elkomy-59563b145/"
                                         target="_blank"><i class="fab fa-linkedin-in"></i></a>
                                 </abbr>
-            
+
                                 <abbr title="GitHub" class="social-icon">
                                     <a class="social-icon" href="https://github.com/ahmed121997" target="_blank"><i
                                             class="fab fa-github"></i></a>
                                 </abbr>
-            
+
                                 <abbr title="Twitter" class="social-icon">
                                     <a class="social-icon" href="https://twitter.com/ahmed_elk00my" target="_blank"><i
                                             class="fab fa-twitter"></i></a>
                                 </abbr>
-            
+
                                 <abbr title="Facebook">
-                                    <a class="social-icon" href="https://www.facebook.com/ahmed.elkomy.7902" target="_blank"><i
-                                            class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                                    <a class="social-icon" href="https://www.facebook.com/ahmed.elkomy.7902"
+                                        target="_blank"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
                                 </abbr>
                             </div>
                         </li>
                     </ul>
                 </div>
-                
+
                 <p class="lead mb-5">I am experienced in <span class="">laravel php</span> framework to provide a
                     websites for high level. and <span class="">web design</span></p>
 
@@ -267,16 +271,22 @@
                 <h2 class="mb-5">Contact</h2>
                 <form id="form">
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Email address</label>
-                      <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter email" required>
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter Your Name" required>
                     </div>
-                    
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp"
+                            placeholder="Enter email" required>
+                    </div>
+
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Your message</label>
-                        <textarea class="form-control" id="your_message" rows="3" required></textarea> 
+                        <textarea class="form-control" id="your_message" rows="3" placeholder="Enter Your Message"
+                            required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary" onclick="sendEmail()">Submit</button>
-                  </form>
+                    <button type="submit" class="btn btn-primary" id="sendEmail">Submit</button>
+                </form>
             </div>
         </section>
         <hr class="m-0" />
@@ -329,7 +339,7 @@
 
     </div>
 
-    
+
     <!-- Bootstrap core JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
@@ -341,25 +351,34 @@
     <script src="js/jquery.nicescroll.min.js"></script>
     <script src="js/wow.min.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"> </script>
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("b8gtW2FDM-CKFhpIS");
+        })();
+    </script>
     <script>
         new WOW().init();
 
         function sendEmail() {
-            console.log('ggggg');
-            Email.send({
-                Host: "smtp.mailtrap.io",
-                Username: "7453621a2e0eb1",
-                Password: "ced9fba1a4804b",
-                To: 'hh@gmail.com',
-                From: "elkomya712@gmail.com",
-                Subject: "Elkomy",
-                Body:  "ojkjfdj ooopf jj jop o o jf",
+            emailjs.send("service_kmv7u1g", "template_czbiblj", {
+                name: $('#name').val(),
+                email: $('#InputEmail').val(),
+                message: $('#your_message').val(),
             }).then(function (message) {
+                $('#name').val(''),
+                    $('#InputEmail').val(''),
+                    $('#your_message').val(''),
                     alert("mail sent successfully");
-                });
+                $('#sendEmail').prop('disabled', false)
+            });
         }
-
+        $('#form').submit(function (e) {
+            e.preventDefault();
+            $('#sendEmail').prop('disabled', true)
+            sendEmail();
+        })
     </script>
 </body>
 
