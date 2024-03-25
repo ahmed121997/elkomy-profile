@@ -10199,3 +10199,8 @@ hr{
     width:80%;
     margin:0 auto !important;
 }
+
+
+#btnClose{
+  background-color: #09877b;border: #09877b;
+}

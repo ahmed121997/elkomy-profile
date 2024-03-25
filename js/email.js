@@ -11,7 +11,7 @@
             $('#name').val(''),
                 $('#InputEmail').val(''),
                 $('#your_message').val(''),
-                alert("mail sent successfully");
+                $('#showMessage').modal('show');
             $('#sendEmail').prop('disabled', false)
         });
     }
